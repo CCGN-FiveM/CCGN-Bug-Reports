@@ -1,28 +1,57 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-
----
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - how long the bug last for
-
-**Additional context**
-Add any other context about the problem here.
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the existing issues
+        required: true
+  - type: textarea
+    id: desc
+    attributes:
+      label: Description
+      description: Describe the issue you are facing.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: Describe the issue you are facing.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the issue.
+      placeholder: |
+          1. Run this command...
+          2. Do this animation...
+          2. Press this key..
+    validations:
+      required: true
+  - type: input
+    id: texture
+    attributes:
+      label: Any Texture Packs? (If so list)
+      description: Any texture packs you may be using (e.g NVE)
+      placeholder: NVE
+    validations:
+      required: false
+  - type: input
+    id: 
+    attributes:
+      label: CCGN FiveM ID
+      description: Your CCGN account user ID (/id)
+      placeholder: "13"
+    validations:
+      required: true
